@@ -1,0 +1,32 @@
+# A TOML plugin for proto:
+# https://moonrepo.dev/docs/proto/non-wasm-plugin
+
+name = "watchexec"
+type = "cli"
+
+[platform.linux]
+download-file = "watchexec-{version}-{arch}-unknown-linux-gnu.tar.xz"
+bin-path = "watchexec"
+checksum-file = "SHA256SUMS"
+
+[platform.macos]
+download-file = "watchexec-{version}-{arch}-apple-darwin.tar.xz"
+bin-path = "watchexec"
+checksum-file = "SHA256SUMS"
+
+[platform.windows]
+download-file = "watchexec-{version}-{arch}-pc-windows-msvc.zip"
+bin-path = "watchexec.exe"
+checksum-file = "SHA256SUMS"
+
+[install]
+download-url = "https://github.com/watchexec/watchexec/releases/download/v{version}/{download_file}"
+checksum-url = "https://github.com/watchexec/watchexec/releases/download/v{version}/{checksum_file}"
+
+[install.arch]
+aarch64 = "aarch64"
+arm = "armv7"
+x86_64 = "x86_64"
+
+[resolve]
+git-url = "https://github.com/watchexec/watchexec"
