@@ -1,0 +1,24 @@
+# A TOML plugin for proto:
+# https://moonrepo.dev/docs/proto/non-wasm-plugin
+
+name = "dbmate"
+type = "cli"
+
+[resolve]
+git-url = "https://github.com/amacneil/dbmate"
+
+[install]
+download-url = "https://github.com/amacneil/dbmate/releases/download/v{version}/{download_file}"
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "amd64"
+
+[platform.macos]
+download-file = "dbmate-macos-{arch}"
+
+[platform.linux]
+download-file = "dbmate-linux-{arch}"
+
+[platform.windows]
+download-file = "dbmate-windows-{arch}.exe"
